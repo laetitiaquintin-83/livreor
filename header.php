@@ -24,17 +24,17 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <nav id="mainNav" class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="livre-or.php">Livre d'or</a></li>
+                    <li><a href="index.php">🏠 Accueil</a></li>
+                    <li><a href="livre-or.php">📖 Livre d'or</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="commentaire.php" class="nav-cta">✍️ Poster</a></li>
+                        <li><a href="commentaire.php" class="nav-cta">✨ Poster</a></li>
                         <li class="user-menu">
                             <a href="profil.php" class="user-badge"><?php echo isset($_SESSION['login']) ? htmlspecialchars($_SESSION['login']) : 'Membre'; ?></a>
                         </li>
-                        <li><a href="logout.php" class="btn-ghost">Déconnexion</a></li>
+                        <li><a href="logout.php" class="btn-ghost">👋 Déconnexion</a></li>
                     <?php else: ?>
-                        <li><a href="inscription.php" class="btn-primary">Inscription</a></li>
-                        <li><a href="connexion.php" class="btn-secondary">Connexion</a></li>
+                        <li><a href="inscription.php" class="btn-primary">🎯 Inscription</a></li>
+                        <li><a href="connexion.php" class="btn-secondary">🔑 Connexion</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>

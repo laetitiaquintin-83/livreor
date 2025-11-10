@@ -9,21 +9,21 @@ require_once 'header.php';
         <!-- Section Hero / Bienvenue -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">✨ Bienvenue sur notre Livre d'Or !</h1>
-                <p class="hero-subtitle">Partagez vos expériences et découvrez celles des autres membres de notre communauté.</p>
+                <h1 class="hero-title">🎉 Hey! Bienvenue dans notre Super Livre d'Or! 🌈</h1>
+                <p class="hero-subtitle">Prêt(e) à partager ta super expérience et à découvrir les messages géniaux de notre fantastique communauté? C'est parti! 🚀</p>
             </div>
         </section>
 
         <!-- Section présentation -->
         <section class="welcome-section">
             <div class="welcome-content">
-                <h2>📖 Qu'est-ce que le Livre d'Or ?</h2>
-                <p>Notre livre d'or est un espace d'échange où chacun peut :</p>
+                <h2>🎨 Notre Livre d'Or Magique, c'est quoi?</h2>
+                <p>C'est comme un journal secret, mais en mieux! Ici, tu peux :</p>
                 <ul class="features-list">
-                    <li>💬 Partager ses impressions et expériences</li>
-                    <li>👥 Découvrir les témoignages de la communauté</li>
-                    <li>✍️ Laisser un message personnalisé</li>
-                    <li>🌟 Contribuer à enrichir notre plateforme</li>
+                    <li>🎭 Partager tes aventures et tes impressions les plus folles</li>
+                    <li>🎪 Explorer les histoires incroyables de la communauté</li>
+                    <li>✨ Créer ton message unique et coloré</li>
+                    <li>� Faire partie de quelque chose de magique!</li>
                 </ul>
             </div>
         </section>
@@ -52,30 +52,30 @@ require_once 'header.php';
                 ?>
                 
                 <div class="stat-card">
-                    <div class="stat-icon">👥</div>
+                    <div class="stat-icon">🎭</div>
                     <div class="stat-number"><?php echo $totalUsers; ?></div>
-                    <div class="stat-label">Membres inscrits</div>
+                    <div class="stat-label">Super Héros Inscrits</div>
                 </div>
                 
                 <div class="stat-card">
-                    <div class="stat-icon">💬</div>
+                    <div class="stat-icon">�</div>
                     <div class="stat-number"><?php echo $totalComments; ?></div>
-                    <div class="stat-label">Commentaires partagés</div>
+                    <div class="stat-label">Messages Magiques</div>
                 </div>
                 
                 <div class="stat-card">
-                    <div class="stat-icon">📅</div>
+                    <div class="stat-icon">🎪</div>
                     <div class="stat-number">
                         <?php 
                         if($lastComment) {
                             $date = new DateTime($lastComment);
                             echo $date->format('d/m/Y');
                         } else {
-                            echo "Aucun";
+                            echo "Sois le 1er! ✨";
                         }
                         ?>
                     </div>
-                    <div class="stat-label">Dernier message</div>
+                    <div class="stat-label">Dernière Aventure</div>
                 </div>
             </div>
         </section>
