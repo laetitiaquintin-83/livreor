@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $currentUser['login'] = $newLogin;
             // Utiliser flash et redirection pour éviter resoumission
-            flash('success', 'Profil mis à jour avec succès !');
+            flash('success', 'Votre identité mystique a été modifiée avec succès !');
             redirect('profil.php');
         } catch (PDOException $e) {
             $errors[] = "Erreur lors de la mise à jour du profil.";
@@ -94,49 +94,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Inclusion du header et affichage du formulaire
-$pageTitle = 'Mon Profil';
+$pageTitle = 'Mon Grimoire Personnel';
 require_once 'includes/header.php';
 ?>
 
 <main class="main-content">
     <div class="container">
-        <h1>Mon Profil</h1>
-
-        <?php if (!empty($errors)): ?>
-            <div class="errors">
-                <ul>
-                    <?php foreach ($errors as $error): ?>
-                        <li><?php echo escape($error); ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-
-        <?php if ($success): ?>
-            <div class="success"><?php echo escape($success); ?></div>
-        <?php endif; ?>
-
-        <form action="" method="post" class="form">
-            <div class="form-group">
-                <label for="login" class="form-label">Login :</label>
-                <input type="text" name="login" id="login" class="form-input" value="<?php echo escape($currentUser['login']); ?>" required placeholder="Votre login">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>🔮 Mon Grimoire Personnel</h1>
+                <p class="form-subtitle">Modifiez votre identité mystique</p>
             </div>
 
-            <div class="form-group">
-                <label for="password" class="form-label">Nouveau mot de passe :</label>
-                <input type="password" id="password" name="password" class="form-input" placeholder="Laissez vide pour garder l'actuel">
+            <?php if (!empty($errors)): ?>
+                <div class="alert alert-error">
+                    <span class="alert-icon">⚠️</span>
+                    <div class="alert-message">
+                        <ul class="error-list">
+                            <?php foreach ($errors as $error): ?>
+                                <li><?php echo escape($error); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($success): ?>
+                <div class="alert alert-success">
+                    <span class="alert-icon">✨</span>
+                    <span class="alert-message"><?php echo escape($success); ?></span>
+                </div>
+            <?php endif; ?>
+
+            <form action="" method="post" class="form">
+                <div class="form-group">
+                    <label for="login" class="form-label">✦ Nom de Mage</label>
+                    <input type="text" name="login" id="login" class="form-input" value="<?php echo escape($currentUser['login']); ?>" required placeholder="Votre nom mystique">
+                    <small class="form-hint">Ce nom apparaîtra sur vos incantations</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">🔐 Nouvelle formule secrète</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Laissez vide pour conserver l'actuelle">
+                    <small class="form-hint">Minimum 6 caractères runiques</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password" class="form-label">🔐 Confirmer la formule</label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-input" placeholder="Répétez la formule secrète">
+                </div>
+
+                <button type="submit" class="submit-btn">✨ Sceller les modifications</button>
+            </form>
+
+            <div class="form-footer">
+                <a href="index.php" class="btn btn-outline">📖 Retour au Sanctuaire</a>
             </div>
-
-            <div class="form-group">
-                <label for="confirm_password" class="form-label">Confirmer le mot de passe :</label>
-                <input type="password" id="confirm_password" name="confirm_password" class="form-input" placeholder="Confirmez le mot de passe">
-            </div>
-
-            <button type="submit" class="submit-btn">Mettre à jour</button>
-        </form>
-
-        <div class="links">
-            <p><a href="index.php">Retour à l'accueil</a></p>
         </div>
     </div>
 </main>
