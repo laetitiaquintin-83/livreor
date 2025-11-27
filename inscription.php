@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'includes/config.php';
 
 // Initialisation des variables
 $error = '';
@@ -58,8 +58,8 @@ require_once 'header.php';
     <div class="container">
         <div class="form-container">
             <div class="form-header">
-                <h1>📝 Créer un compte</h1>
-                <p class="form-subtitle">Rejoignez notre communauté et partagez vos expériences !</p>
+                <h1>🔮 Rejoindre la Guilde</h1>
+                <p class="form-subtitle">Créez votre grimoire personnel et inscrivez vos sortilèges</p>
             </div>
 
             <!-- Messages d'erreur et de succès -->
@@ -138,7 +138,7 @@ require_once 'header.php';
                 <div class="form-group">
                     <button type="submit" class="submit-btn">
                         <span class="btn-icon">✨</span>
-                        Créer mon compte
+                        Commencer l'initiation
                     </button>
                 </div>
 

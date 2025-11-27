@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'includes/config.php';
 
 // Initialisation des variables
 $error = '';
@@ -61,8 +61,8 @@ require_once 'header.php';
     <div class="container">
         <div class="form-container">
             <div class="form-header">
-                <h1>🔑 Connexion</h1>
-                <p class="form-subtitle">Accédez à votre espace personnel</p>
+                <h1>🗝️ Entrer dans le Sanctuaire</h1>
+                <p class="form-subtitle">Retrouvez votre grimoire et vos sortilèges</p>
             </div>
 
             <!-- Messages d'erreur et de succès -->
@@ -119,8 +119,8 @@ require_once 'header.php';
 
                 <div class="form-group">
                     <button type="submit" class="submit-btn">
-                        <span class="btn-icon">🚀</span>
-                        Se connecter
+                        <span class="btn-icon">✨</span>
+                        Ouvrir le portail
                     </button>
                 </div>
 

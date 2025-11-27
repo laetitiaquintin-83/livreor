@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Exécuter la requête
             if ($stmt->execute([$userId, $commentaire])) {
                 // Message flash et redirection immédiate
-                flash('success', 'Votre commentaire a été publié avec succès !');
+                flash('success', 'Votre incantation a été gravée dans le Grimoire !');
                 redirect('livre-or.php');
             } else {
                 $errors[] = "Une erreur est survenue lors de la publication. Veuillez réessayer.";
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Définir le titre de la page
-$pageTitle = "Ajouter un commentaire";
+$pageTitle = "Inscrire une incantation";
 require_once 'includes/header.php';
 ?>
 
@@ -59,11 +59,11 @@ require_once 'includes/header.php';
             
             <!-- En-tête -->
             <div class="form-header">
-                <h1>✍️ Partager votre expérience</h1>
-                <p class="form-subtitle">Laissez un message dans notre livre d'or</p>
+                <h1>✨ Inscrire une Incantation</h1>
+                <p class="form-subtitle">Gravez vos mots dans le Grand Grimoire</p>
                 <div class="user-info">
                     <span class="user-badge">
-                        📝 Vous publiez en tant que <strong><?php echo escape($_SESSION['login']); ?></strong>
+                        🔮 Vous signez en tant que <strong><?php echo escape($_SESSION['login']); ?></strong>
                     </span>
                 </div>
             </div>
@@ -92,12 +92,12 @@ require_once 'includes/header.php';
 
             <!-- Conseils de rédaction -->
             <div class="writing-tips">
-                <h3>💡 Conseils pour votre commentaire</h3>
+                <h3>📜 Sagesse pour votre incantation</h3>
                 <ul class="tips-list">
-                    <li>✓ Soyez authentique et partagez votre véritable expérience</li>
-                    <li>✓ Restez courtois et respectueux envers les autres</li>
-                    <li>✓ Évitez les informations personnelles sensibles</li>
-                    <li>✓ Minimum 10 caractères, maximum 5000 caractères</li>
+                    <li>✦ Partagez l'essence de votre expérience mystique</li>
+                    <li>✦ Honorez les autres mages avec respect</li>
+                    <li>✦ Gardez vos secrets personnels cachés</li>
+                    <li>✦ Entre 10 et 5000 caractères runiques</li>
                 </ul>
             </div>
 
@@ -106,8 +106,8 @@ require_once 'includes/header.php';
                 
                 <div class="form-group">
                     <label for="commentaire" class="form-label">
-                        <span class="label-icon">💬</span>
-                        Votre commentaire
+                        <span class="label-icon">✨</span>
+                        Votre incantation
                         <span class="char-counter">
                             <span id="charCount">0</span> / 5000
                         </span>
@@ -117,14 +117,13 @@ require_once 'includes/header.php';
                         id="commentaire" 
                         class="form-textarea"
                         rows="8"
-                        placeholder="Partagez votre expérience, vos impressions, vos idées..."
+                        placeholder="Inscrivez votre message magique, vos impressions enchantées, vos visions..."
                         required
                         minlength="10"
                         maxlength="5000"
                     ><?php echo escape($commentaire); ?></textarea>
                     <small class="form-hint">
-                        Minimum 10 caractères. Utilisez des sauts de ligne pour structurer votre texte.
-                    </small>
+                        Minimum 10 runes. Les retours à la ligne structurent votre sortilège.</small>
                 </div>
 
                 <!-- Aperçu du commentaire (optionnel) -->
@@ -135,29 +134,29 @@ require_once 'includes/header.php';
 
                 <div class="form-actions">
                     <button type="submit" class="submit-btn">
-                        <span class="btn-icon">🚀</span>
-                        Publier mon commentaire
+                        <span class="btn-icon">✨</span>
+                        Graver l'incantation
                     </button>
                     <button type="button" class="btn btn-secondary" id="previewBtn">
-                        <span class="btn-icon">👁️</span>
+                        <span class="btn-icon">🔮</span>
                         Aperçu
                     </button>
                     <a href="livre-or.php" class="btn btn-outline">
-                        <span class="btn-icon">◀️</span>
-                        Retour au livre d'or
+                        <span class="btn-icon">📖</span>
+                        Retour au Grimoire
                     </a>
                 </div>
             </form>
 
-            <!-- Règles de la communauté -->
+            <!-- Règles de la Guilde -->
             <div class="community-rules">
-                <h3>📜 Règles de la communauté</h3>
-                <p>En publiant un commentaire, vous acceptez de respecter notre charte :</p>
+                <h3>⚔️ Code de la Guilde des Mages</h3>
+                <p>En inscrivant votre incantation, vous jurez de respecter le code sacré :</p>
                 <ul>
-                    <li>Pas de contenu offensant, discriminatoire ou haineux</li>
-                    <li>Pas de spam ou de publicité</li>
-                    <li>Pas de divulgation d'informations personnelles</li>
-                    <li>Respect de la vie privée des autres utilisateurs</li>
+                    <li>Nulle magie noire, discrimination ou malédiction</li>
+                    <li>Nul sortilège commercial ou enchantement publicitaire</li>
+                    <li>Gardez les secrets personnels dans l'ombre</li>
+                    <li>Honorez la vie privée des autres initiés</li>
                 </ul>
             </div>
 
